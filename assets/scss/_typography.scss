@@ -1,0 +1,50 @@
+@use "variables";
+@use "colors" as co;
+
+body {
+  // Estilos para el scrollbar
+  background-color: map-get(co.$colors, "white");
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: map-get(co.$colors, "primary" );
+    border-radius: 20px;
+    border: 2px solid map-get(co.$colors, "white" );
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: variables.$font-main;
+}
+
+h4,
+h5,
+h6,
+p,
+a,
+button {
+  font-family: variables.$font-secondary;
+}
+
+.container {
+  .header__nav {
+    width: auto;
+    justify-content: center;
+  }
+}

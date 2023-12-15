@@ -1,0 +1,49 @@
+@use "../colors" as co;
+
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@include mobile() {
+  .header {
+    margin: 10px 30px;
+    &__logo {
+      &-logotipo {
+        display: none;
+      }
+    }
+    &__nav {
+      &-icon-hamburguer {
+        display: block;
+        color: map-get(co.$colors, "gray");
+        &:focus{
+          color: map-get(co.$colors, "secondary");
+        }
+      }
+      &-list:first-child {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: calc(10% - 20px);
+        left: 0;
+        background-color: map-get(co.$colors, "grayLight");
+        width: 100%;
+
+        &.show {
+          display: flex;
+        }
+
+        li {
+          margin: 0;
+          text-align: center;
+          padding: 10px;
+        }
+      }
+      &-icon {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+// Reinicia la hoja de estilos del navegador
+html,
+body,
+address,
+blockquote,
+div,
+dl,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+pre,
+table,
+ul,
+dd,
+dt,
+li,
+tbody,
+td,
+th,
+tfoot,
+th,
+thead,
+tr,
+button,
+del,
+ins,
+map,
+object,
+a,
+abbr,
+acronym,
+b,
+bdo,
+big,
+br,
+cite,
+code,
+dfn,
+em,
+i,
+img,
+kbd,
+q,
+samp,
+small,
+span,
+strong,
+sub,
+sup,
+tt,
+var,
+legend,
+fieldset,
+figure {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+img,
+a img {
+  border: none;
+}
+
+a {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+sub {
+  line-height: 0;
+  vertical-align: sub;
+  font-size: 50%;
+}
+
+a {
+  text-decoration: none;
+  color: #474747;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}

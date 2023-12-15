@@ -1,0 +1,26 @@
+@use "../colors" as co;
+
+.footer {
+  width: 400px;
+  margin: 80px auto 0;
+  text-align: center;
+  color: map-get(co.$colors, "grayLight");
+  &__copy{
+    margin: 40px 0 20px 0;
+    &-right {
+      font-size: 15px;
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      span{
+        color: map-get(co.$colors, "secondary");
+      }
+    }
+  }
+  &__social{
+    margin: 30px 0;
+    i{
+      font-size: 22px;
+      margin: 0 10px;
+    }
+  }
+}

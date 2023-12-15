@@ -1,0 +1,70 @@
+@use "../colors" as co;
+
+// Definición de mixin
+@mixin flexBox($display: flex, $vertical: center, $horizontal: center) {
+  display: $display;
+  align-items: $vertical;
+  justify-content: $horizontal;
+}
+
+.header {
+  margin: 15px 80px;
+  padding: 15px 10px;
+  @include flexBox($horizontal: space-between);
+  &__logo {
+    width: 160px;
+    @include flexBox($horizontal: space-between);
+    &-logotipo {
+      text-transform: uppercase;
+      line-height: 12px;
+      span:first-of-type {
+        font-size: 18px;
+        color: map-get(co.$colors, "gray");
+      }
+      span:last-of-type {
+        font-size: 10px;
+        color: map-get(co.$colors, "grayLight");
+      }
+    }
+  }
+  &__nav {
+    width: 500px;
+    @include flexBox($horizontal: space-between);
+    ul {
+      width: 450px;
+      @include flexBox($horizontal: space-around);
+      li {
+        padding: 8px 18PX;
+        &:hover {
+          padding: 8px 18PX;
+          background-color: map-get(co.$colors, "secondary");
+          cursor: pointer;
+          a {
+            color: map-get(co.$colors, "white");
+          }
+        }
+        a {
+          color: map-get(co.$colors, "gray");
+        }
+      }
+      .active {
+        padding: 8px 18px;
+        background-color: map-get(co.$colors, "secondary");
+        cursor: pointer;
+        a {
+          color: map-get(co.$colors, "white");
+        }
+      }
+    }
+    &-icon-hamburguer {
+      display: none;
+      cursor: pointer;
+      font-size: 25px;
+    }
+    &-icon {
+      font-size: 20px;
+      color: map-get(co.$colors, "primary");
+      cursor: pointer;
+    }
+  }
+}
