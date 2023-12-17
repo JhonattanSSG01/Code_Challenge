@@ -15,8 +15,12 @@
       }
     }
     &__nav {
+      width: auto;
+      justify-content: space-around;
       &-icon-hamburguer {
+        order: 2;
         display: block;
+        margin-left: 40px;
         color: map-get(co.$colors, "gray");
         &:focus{
           color: map-get(co.$colors, "secondary");
@@ -40,9 +44,6 @@
           text-align: center;
           padding: 10px;
         }
-      }
-      &-icon {
-        display: none;
       }
     }
   }

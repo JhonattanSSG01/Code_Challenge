@@ -12,7 +12,7 @@
   margin: 50px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 200px;
+  place-content: center;
   gap: 25px;
   &__image {
     width: 100%;
@@ -21,15 +21,21 @@
     margin: auto;
     object-fit: cover;
   }
-  &__image:nth-child(2), &__image:nth-child(4), &__image:nth-child(6), &__image:nth-child(8), &__image:nth-child(9),&__image:nth-child(10) {
+  &__image:nth-child(2),
+  &__image:nth-child(4),
+  &__image:nth-child(6),
+  &__image:nth-child(8),
+  &__image:nth-child(9),
+  &__image:nth-child(10) {
     grid-row-start: span 2;
   }
 }
+
 @include mobile() {
   .grid {
     width: auto;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 0 10px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 0 10px;
   }
 }
 
@@ -46,5 +52,9 @@
     text-transform: capitalize;
     letter-spacing: 2px;
     cursor: pointer;
+    &:hover {
+      background-color: map-get(co.$colors, "grayLight");
+      color: map-get(co.$colors, "secondary");
+    }
   }
 }

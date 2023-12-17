@@ -147,6 +147,7 @@ button {
 }
 
 .header {
+  width: 86%;
   margin: 15px 80px;
   padding: 15px 10px;
   display: flex;
@@ -184,10 +185,10 @@ button {
   justify-content: space-around;
 }
 .header__nav ul li {
-  padding: 8px 18PX;
+  padding: 8px 18px;
 }
 .header__nav ul li:hover {
-  padding: 8px 18PX;
+  padding: 8px 18px;
   background-color: #ff5672;
   cursor: pointer;
 }
@@ -215,7 +216,40 @@ button {
   color: #fc758c;
   cursor: pointer;
 }
+.header .noShow {
+  display: none;
+}
+.header .Show {
+  display: block;
+}
+.header__form {
+  width: 200px;
+  padding: 10px 0;
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+.header__form-input {
+  width: 80%;
+  padding: 10px;
+  background-color: #cbd6dd;
+  color: #707070;
+  border-radius: 9999px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  text-transform: capitalize;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
 
+@media screen and (max-width: 768px) {
+  .header__form {
+    top: 12px;
+    bottom: 0;
+    right: 50px;
+  }
+}
 .banner {
   width: auto;
   height: calc(100vh - 95px);
@@ -266,6 +300,16 @@ button {
   margin: 0 18px;
   color: #ff5672;
   font-size: 20px;
+  cursor: pointer;
+}
+.icons i:hover {
+  color: #707070;
+}
+.icons .grid__active {
+  color: #707070;
+}
+.icons .grid__active:hover {
+  color: #ff5672;
 }
 
 .grid {
@@ -274,7 +318,7 @@ button {
   margin: 50px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 200px;
+  place-content: center;
   gap: 25px;
 }
 .grid__image {
@@ -291,7 +335,7 @@ button {
 @media screen and (max-width: 768px) {
   .grid {
     width: auto;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     padding: 0 10px;
   }
 }
@@ -309,6 +353,10 @@ button {
   text-transform: capitalize;
   letter-spacing: 2px;
   cursor: pointer;
+}
+.more__btn:hover {
+  background-color: #cbd6dd;
+  color: #ff5672;
 }
 
 .footer {
@@ -343,8 +391,14 @@ button {
   .header__logo-logotipo {
     display: none;
   }
+  .header__nav {
+    width: auto;
+    justify-content: space-around;
+  }
   .header__nav-icon-hamburguer {
+    order: 2;
     display: block;
+    margin-left: 40px;
     color: #707070;
   }
   .header__nav-icon-hamburguer:focus {
@@ -366,9 +420,6 @@ button {
     margin: 0;
     text-align: center;
     padding: 10px;
-  }
-  .header__nav-icon {
-    display: none;
   }
 }
 

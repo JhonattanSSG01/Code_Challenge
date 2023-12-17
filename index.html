@@ -31,18 +31,23 @@
       <div class="header__nav">
         <nav>
           <ul id="menu" class="header__nav-list">
-            <li onclick="loadImagesRandom()"><a href="#">All</a></li>
-            <li onclick="loadImagesRandom()"><a href="#">Branding</a></li>
-            <li onclick="loadImagesRandom()"><a href="#">Web</a></li>
-            <li onclick="loadImagesRandom()"><a href="#">Photography</a></li>
-            <li onclick="loadImagesRandom()"><a href="#">App</a></li>
+            <li><a href="#">All</a></li>
+            <li><a href="#">Branding</a></li>
+            <li><a href="#">Web</a></li>
+            <li><a href="#">Photography</a></li>
+            <li><a href="#">App</a></li>
           </ul>
         </nav>
         <i
           class="header__nav-icon-hamburguer fa-solid fa-bars"
           onclick="toggleMenu()"
         ></i>
-        <i class="header__nav-icon fa-solid fa-magnifying-glass"></i>
+        <i class="header__nav-icon fa-solid fa-magnifying-glass" id="search" onclick="changeView()"></i>
+        <form action="" class="header__form" id="header__form" autocomplete="off">
+          <fieldset>
+            <input id="header__form-input" class="noShow header__form-input" type="text" placeholder="Ingrese categoria">
+          </fieldset>
+        </form>
       </div>
     </header>
     <main>
@@ -59,25 +64,25 @@
         </section>
       </div>
       <div class="icons" id="icons">
-        <i class="fa-sharp fa-solid fa-border-all"></i>
-        <i class="fa-sharp fa-solid fa-grip-lines"></i>
+        <i class="grid__active grid__icon fa-sharp fa-solid fa-border-all"></i>
+        <i class="fa-sharp grid__icon fa-solid fa-grip-lines"></i>
       </div>
       <div class="container">
         <nav class="header__nav container__nav">
           <ul>
-            <li class="option active" onclick="loadImagesRandom()">
+            <li onclick="loadImagesRandom()" class="option active">
               <a href="#icons">All</a>
             </li>
-            <li class="option" onclick="loadImagesRandom()">
+            <li onclick="loadImagesRandom()" class="option">
               <a href="#icons">Branding</a>
             </li>
-            <li class="option" onclick="loadImagesRandom()">
+            <li onclick="loadImagesRandom()" class="option">
               <a href="#icons">Web</a>
             </li>
-            <li class="option" onclick="loadImagesRandom()">
+            <li onclick="loadImagesRandom()" class="option">
               <a href="#icons">Photography</a>
             </li>
-            <li class="option" onclick="loadImagesRandom()">
+            <li onclick="loadImagesRandom()" class="option">
               <a href="#icons">App</a>
             </li>
           </ul>
@@ -85,7 +90,7 @@
       </div>
       <div class="grid" id="grid"></div>
       <div class="more">
-        <button type="button" class="more__btn">Show me more</button>
+        <button type="button" class="more__btn" id="more__btn">Show me more</button>
       </div>
     </main>
     <footer class="footer">

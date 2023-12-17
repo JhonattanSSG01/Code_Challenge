@@ -8,6 +8,15 @@
     margin: 0 18px;
     color: map-get(co.$colors, "secondary");
     font-size: 20px;
+    cursor: pointer;
+    &:hover {
+      color: map-get(co.$colors, "gray");
+    }
+  }
+  .grid__active {
+    color: map-get(co.$colors, "gray");
+    &:hover {
+      color: map-get(co.$colors, "secondary");
+    }
   }
 }
-

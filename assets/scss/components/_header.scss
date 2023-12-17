@@ -1,5 +1,12 @@
 @use "../colors" as co;
 
+
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
 // Definición de mixin
 @mixin flexBox($display: flex, $vertical: center, $horizontal: center) {
   display: $display;
@@ -8,6 +15,7 @@
 }
 
 .header {
+  width: 86%;
   margin: 15px 80px;
   padding: 15px 10px;
   @include flexBox($horizontal: space-between);
@@ -34,9 +42,9 @@
       width: 450px;
       @include flexBox($horizontal: space-around);
       li {
-        padding: 8px 18PX;
+        padding: 8px 18px;
         &:hover {
-          padding: 8px 18PX;
+          padding: 8px 18px;
           background-color: map-get(co.$colors, "secondary");
           cursor: pointer;
           a {
@@ -66,5 +74,41 @@
       color: map-get(co.$colors, "primary");
       cursor: pointer;
     }
+  }
+  .noShow {
+    display: none;
+  }
+  .Show {
+    display: block;
+  }
+
+  &__form {
+    width: 200px;
+    padding: 10px 0;
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    &-input {
+      width: 80%;
+      padding: 10px;
+      background-color: map-get(co.$colors, "grayLight");
+      color: map-get(co.$colors, "gray");
+      border-radius: 9999px;
+      outline: none;
+      border: none;
+      font-size: 15px;
+      text-transform: capitalize;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+
+@include mobile() {
+  .header__form {
+    top: 12px;
+    bottom: 0;
+    right: 50px;
   }
 }
