@@ -245,9 +245,9 @@ button {
 
 @media screen and (max-width: 768px) {
   .header__form {
-    top: 12px;
+    top: 80px;
     bottom: 0;
-    right: 50px;
+    right: 20px;
   }
 }
 .banner {
