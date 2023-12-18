@@ -6,8 +6,10 @@ const fromGrid = document.getElementById("grid");
 const moreImages = document.getElementById("more__btn");
 const search = document.getElementById("search");
 
+let keyword = "oficina";
 let page = 1;
 
+// Muestra y oculta el icono de busquedad
 changeView = () => {
   formInput.classList.toggle("noShow");
   formInput.classList.toggle("Show");
@@ -20,12 +22,15 @@ changeView = () => {
 
 // Petición para obtener las imagenes
 loadImagesRandom = () => {
-  let keyword = formInput.value;
+  if (formInput.value === "") {
+    keyword = "oficina";
+  } else {
+    keyword = formInput.value;
+  }
   let apiUrl = `https://api.unsplash.com/search/photos/?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=12`; // Url de la api generadora de imagenes
 
   // Agregar o remover clase a un elemento
   let links = document.querySelectorAll(".option");
-
   for (let [i, li] of links.entries()) {
     li.addEventListener("click", () => {
       resetStatus();
@@ -45,6 +50,7 @@ loadImagesRandom = () => {
     });
 }
 
+// Muestra imagenes dependiendo de la busqueda en el formualrio
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   page = 1;
@@ -52,6 +58,7 @@ form.addEventListener("submit", (event) => {
   loadImagesRandom();
 });
 
+// Se va agregando mas paginas al dar click al show me more
 moreImages.addEventListener("click", () => {
   page++;
   loadImagesRandom();
@@ -74,7 +81,7 @@ viewImages = (images) => {
     imageElement.classList.add("grid__image");
     containerImages.appendChild(imageElement);
   });
-
+  // Cambiamos los estrilos dependiendo de un seleccion 
   let imagesGrid = document.querySelectorAll(".grid__image");
   for (let [i, ic] of icons.entries()) {
     ic.addEventListener("click", () => {
@@ -106,7 +113,11 @@ viewImages = (images) => {
 
 }
 
+// Muestra y oculta el menu hamburguesa
 function toggleMenu() {
   const menu = document.querySelector("#menu");
   menu.classList.toggle("show");
 }
+
+// Genera imagenes al inicio
+loadImagesRandom(); 
